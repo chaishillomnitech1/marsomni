@@ -1,0 +1,90 @@
+{
+  "version": 2,
+  "name": "marsomni",
+  "alias": ["marsomni.scrollverse.app"],
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "README.md",
+      "use": "@vercel/markdown"
+    },
+    {
+      "src": "MARSOMNI_VISION.md",
+      "use": "@vercel/markdown"
+    },
+    {
+      "src": "IMPLEMENTATION_ROADMAP.md",
+      "use": "@vercel/markdown"
+    },
+    {
+      "src": "EXECUTION_BLUEPRINT.md",
+      "use": "@vercel/markdown"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/vision",
+      "dest": "/MARSOMNI_VISION.md"
+    },
+    {
+      "src": "/roadmap",
+      "dest": "/IMPLEMENTATION_ROADMAP.md"
+    },
+    {
+      "src": "/blueprint",
+      "dest": "/EXECUTION_BLUEPRINT.md"
+    }
+  ],
+  "env": {
+    "MARS_SOVEREIGN_ADDRESS": "@mars_sovereign_address",
+    "FREQUENCY": "44:Omni",
+    "DNA_SIGNATURE": "Chais Sabir Allah the Great"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-MARSOMNI-SOVEREIGN",
+          "value": "Chaisallah"
+        },
+        {
+          "key": "X-FREQUENCY",
+          "value": "44:Omni"
+        },
+        {
+          "key": "X-VISION",
+          "value": "The Greatest Website Ever"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/github",
+      "destination": "https://github.com/chaishillomnitech1/marsomni",
+      "permanent": false
+    },
+    {
+      "source": "/scrollport",
+      "destination": "https://scrollport-xkjtdnvi.manus.space",
+      "permanent": false
+    },
+    {
+      "source": "/vineland",
+      "destination": "https://github.com/chaishillomnitech1/VinelandEternal",
+      "permanent": false
+    }
+  ]
+}
